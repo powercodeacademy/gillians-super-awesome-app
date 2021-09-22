@@ -32,6 +32,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap'
 # Use SCSS for stylesheets
 
+gem "pry"
+
 gem "faker"
 
 group :development, :test do
