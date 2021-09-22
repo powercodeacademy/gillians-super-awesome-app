@@ -8,6 +8,17 @@
     </button>
   </div>
 
+  <% if @check_in.errors.any? %>
+    <div class="alert alert-danger mt-5">
+      <h6>Your check-in didn't save :( Here's why: </h6>
+      <ul>
+        <% @check_in.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="m-5">
     <%= form_for @check_in do |form| %>
       <div class="form-group mb-3">
