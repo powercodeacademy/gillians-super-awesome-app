@@ -1,0 +1,27 @@
+<div class="w-100">
+  <div class="d-flex justify-content-between pt-5 mx-5">
+    <h1>Check-Ins</h1>
+  </div>
+
+  <br />
+
+  <table class="m-5">
+    <tr>
+      <th>Name</th>
+      <th>Happiness (Role)</th>
+      <th>Happiness (Company)</th>
+      <th>Emotion</th>
+      <th>Comment</th>
+    </tr>
+
+    <% @check_ins.each do |check_in| %>
+      <tr>
+        <td><%= check_in.name %></td>
+        <td><%= check_in.role_happiness %></td>
+        <td><%= check_in.company_happiness %></td>
+        <td><%= check_in.emotion %></td>
+        <td><%= check_in.comment %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
