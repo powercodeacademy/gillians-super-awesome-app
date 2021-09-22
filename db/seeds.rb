@@ -12,6 +12,6 @@
     role_happiness: rand(1..5),
     company_happiness: rand(1..5),
     emotion: Faker::Emotion.adjective,
-    comment: Faker::Lorem.paragraphs(number: 1)
+    comment: Faker::Lorem.paragraph(sentence_count: 2, random_sentences_to_add: 4)
   })
 end
