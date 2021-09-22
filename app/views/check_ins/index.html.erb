@@ -14,7 +14,7 @@
       <th>Happiness (Role)</th>
       <th>Happiness (Company)</th>
       <th>Emotion</th>
-      <th>Comment</th>
+      <th colspan="2">Comment</th>
     </tr>
 
     <% @check_ins.each do |check_in| %>
@@ -24,6 +24,7 @@
         <td><%= check_in.company_happiness %></td>
         <td><%= check_in.emotion %></td>
         <td><%= check_in.comment %></td>
+        <td><%= link_to "Delete", check_in_path(check_in), method: "delete" %></td>
       </tr>
     <% end %>
   </table>
