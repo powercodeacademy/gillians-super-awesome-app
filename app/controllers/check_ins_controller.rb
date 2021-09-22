@@ -6,4 +6,10 @@ class CheckInsController < ApplicationController
   def show
     @check_in = CheckIn.find(params[:id])
   end
+
+  def new
+  end
+
+  def create
+  end
 end
