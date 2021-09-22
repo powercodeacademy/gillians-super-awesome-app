@@ -16,7 +16,7 @@
 
     <% @check_ins.each do |check_in| %>
       <tr>
-        <td><%= check_in.name %></td>
+        <td><%= link_to check_in.name, check_in_path(check_in) %></td>
         <td><%= check_in.role_happiness %></td>
         <td><%= check_in.company_happiness %></td>
         <td><%= check_in.emotion %></td>

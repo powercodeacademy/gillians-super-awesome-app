@@ -1,0 +1,18 @@
+<div class="w-100">
+  <div class="d-flex justify-content-between align-items-start pt-5 mx-5">
+    <div>
+      <h1><%= @check_in.name %></h1>
+      <p><%= @check_in.created_at.strftime("%m/%d/%Y") %></p>
+    </div>
+    <button class="btn btn-small btn-primary">
+      <%= link_to "Back to Listing", check_ins_path, class: "text-white" %>
+    </button>
+  </div>
+
+  <div class="m-5">
+    <p><strong>Emotion:</strong> <%= @check_in.emotion %></p>
+    <p><strong>Happiness (Role):</strong> <%= @check_in.role_happiness %></p>
+    <p><strong>Happiness (Company):</strong> <%= @check_in.company_happiness %></p>
+    <p><strong>Additional comments: </strong> <%= @check_in.comment %></p>
+  </div>
+</div>
