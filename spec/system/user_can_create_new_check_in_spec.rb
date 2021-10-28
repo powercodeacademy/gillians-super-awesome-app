@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "when a user visits the index page" do
+describe "when a user visits the index page", type: :system do
   it "they can create a new check in using the new button" do
     visit check_ins_path
 

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "when a user visits the checkins index page", type: :feature do
+describe "when a user visits the checkins index page", type: :system do
   it "they see a list of all the checkins" do
     check_in = create_check_in
     another_check_in = create_another_check_in
