@@ -1,5 +1,7 @@
 class CheckInsController < ApplicationController
   before_action :find_check_in, only: [:show, :destroy]
+  # before_action :require_user, only: [:show]
+
   def index
     @check_ins = CheckIn.all
   end
