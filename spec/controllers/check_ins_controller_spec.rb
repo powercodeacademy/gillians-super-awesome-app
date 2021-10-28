@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe CheckInsController, type: :controller do
   describe "GET #show" do
     it "renders the show template", :aggregate_failures do
-      create_check_in
+      check_in = create_check_in
 
       get :show, params: { id: check_in.id }
 
@@ -11,7 +11,7 @@ RSpec.describe CheckInsController, type: :controller do
     end
 
     it "assigns @check_in to the correct instance" do
-      create_check_in
+      check_in = create_check_in
 
       get :show, params: { id: check_in.id }
 
@@ -19,7 +19,7 @@ RSpec.describe CheckInsController, type: :controller do
     end
 
     it "the response status is a success" do
-      create_check_in
+      check_in = create_check_in
 
       get :show, params: { id: check_in.id }
 
@@ -49,11 +49,18 @@ RSpec.describe CheckInsController, type: :controller do
 
     describe "with invalid attributes" do
       it "fails" do
-
+        expect { post :create, params: invalid_check_in_params }.to change(CheckIn, :count).by(0)
         # not create a new record
         # fail a validation
         # re-render :new template
         # flash[:error, etc]
+        expect(response).to render_template(:new)
+      end
+
+      it "flashes an error message" do
+        post :create, params: invalid_check_in_params
+
+        expect(flash[:error]).to eq "bruh"
       end
     end
   end
@@ -80,10 +87,12 @@ RSpec.describe CheckInsController, type: :controller do
 
   def invalid_check_in_params
     {
-      name: "gillian",
-      role_happiness: 4,
-      company_happiness: 4,
-      comment: "these are excellent"
+      check_in: {
+        name: "gillian",
+        role_happiness: 4,
+        company_happiness: 4,
+        comment: "these are excellent"
+      }
     }
   end
 end

@@ -17,6 +17,7 @@ class CheckInsController < ApplicationController
       @check_in.save
       redirect_to check_in_path(@check_in)
     else
+      flash[:error] = "bruh"
       render :new
     end
   end
